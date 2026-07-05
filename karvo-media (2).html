@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karvo Media — Influencer Marketing Agency for Brands That Grow Through Trust</title>
+<meta name="description" content="Karvo Media connects Shopify, beauty, health, and consumer brands with creators whose audiences already trust them — turning influence into measurable growth.">
+<meta name="theme-color" content="#1E140D">
+
+<meta property="og:title" content="Karvo Media — Creators don't sell products. They build belief.">
+<meta property="og:description" content="An influencer marketing agency connecting ambitious consumer brands with creators who convert trust into growth.">
+<meta property="og:type" content="website">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Karvo Media",
+  "description": "Influencer marketing agency connecting brands with creators to produce authentic, high-converting campaigns and brand partnerships.",
+  "serviceType": ["Influencer Marketing", "Creator Sourcing", "Campaign Management", "Brand Partnerships"],
+  "areaServed": "Worldwide",
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Shopify brands, clothing brands, beauty brands, health brands, consumer startups"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --cream:#F6F0E4;
+    --white:#FBF8F2;
+    --brown-950:#160E09;
+    --brown-900:#1E140D;
+    --brown-800:#2B1D13;
+    --brown-700:#3E2C1D;
+    --brown-500:#7A5B3E;
+    --gold:#C6A15B;
+    --gold-light:#E3CE9C;
+    --gold-dim:#8A733F;
+    --beige:#DFCBA8;
+    --ink:#231710;
+    --ink-soft:#4A392C;
+    --line:rgba(35,23,16,0.12);
+    --line-dark:rgba(246,240,228,0.14);
+    --ease:cubic-bezier(.22,.61,.36,1);
+    --maxw:1240px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;margin:0;padding:0;}
+  button{font-family:inherit;cursor:pointer;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+
+  .grain-overlay{
+    position:fixed; inset:0; z-index:9999; pointer-events:none;
+    opacity:0.05; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    background-repeat:repeat;
+  }
+
+  h1,h2,h3,h4{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    margin:0;
+    line-height:1.05;
+    letter-spacing:-0.01em;
+  }
+
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 40px;}
+  @media (max-width:640px){ .wrap{padding:0 22px;} }
+
+  .eyebrow{
+    font-family:'Inter',sans-serif;
+    font-size:12px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    font-weight:600;
+    color:var(--gold-dim);
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px; height:1px;
+    background:var(--gold-dim);
+    display:inline-block;
+  }
+  section.dark .eyebrow, .dark .eyebrow{ color:var(--gold-light); }
+  section.dark .eyebrow::before, .dark .eyebrow::before{ background:var(--gold-light); }
+
+  /* ---------- focus ---------- */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
+    outline:2px solid var(--gold);
+    outline-offset:3px;
+  }
+
+  /* ---------- reveal ---------- */
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity .9s var(--ease), transform .9s var(--ease); }
+  .reveal.is-visible{ opacity:1; transform:translateY(0); }
+  .reveal-delay-1{ transition-delay:.08s; }
+  .reveal-delay-2{ transition-delay:.16s; }
+  .reveal-delay-3{ transition-delay:.24s; }
+  .reveal-delay-4{ transition-delay:.32s; }
+
+  /* ---------- Nav ---------- */
+  header.site-nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(30,20,13,0.0);
+    transition:background .5s var(--ease), box-shadow .5s var(--ease), padding .4s var(--ease);
+    padding:26px 0;
+  }
+  header.site-nav.scrolled{
+    background:rgba(22,14,9,0.86);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    padding:16px 0;
+    box-shadow:0 1px 0 rgba(255,255,255,0.06);
+  }
+  .nav-inner{ display:flex; align-items:center; justify-content:space-between; }
+  .logo{
+    font-family:'Fraunces',serif;
+    font-size:22px;
+    font-weight:500;
+    letter-spacing:0.02em;
+    color:var(--cream);
+  }
+  .logo em{ font-style:italic; color:var(--gold-light); }
+  nav.primary{ display:flex; align-items:center; gap:44px; }
+  nav.primary a.nav-link{
+    color:var(--cream);
+    font-size:14px;
+    letter-spacing:0.03em;
+    position:relative;
+    padding:4px 0;
+    opacity:.85;
+    transition:opacity .3s var(--ease);
+  }
+  nav.primary a.nav-link::after{
+    content:""; position:absolute; left:0; bottom:0; height:1px; width:0;
+    background:var(--gold-light);
+    transition:width .35s var(--ease);
+  }
+  nav.primary a.nav-link:hover{ opacity:1; }
+  nav.primary a.nav-link:hover::after{ width:100%; }
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    padding:13px 28px;
+    border-radius:999px;
+    font-size:13px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    font-weight:600;
+    border:1px solid transparent;
+    transition:transform .35s var(--ease), background .35s var(--ease), color .35s var(--ease), border-color .35s var(--ease);
+    white-space:nowrap;
+  }
+  .btn-gold{
+    background:linear-gradient(135deg, var(--gold-light), var(--gold));
+    color:var(--brown-950);
+    box-shadow:0 10px 30px -10px rgba(198,161,91,0.55);
+  }
+  .btn-gold:hover{ transform:translateY(-2px); box-shadow:0 16px 40px -10px rgba(198,161,91,0.7); }
+  .btn-ghost-dark{
+    border-color:rgba(246,240,228,0.35);
+    color:var(--cream);
+  }
+  .btn-ghost-dark:hover{ border-color:var(--gold-light); color:var(--gold-light); }
+  .btn-ghost-light{
+    border-color:rgba(35,23,16,0.25);
+    color:var(--ink);
+  }
+  .btn-ghost-light:hover{ border-color:var(--ink); }
+
+  .magnetic{ will-change:transform; }
+
+  .nav-cta{ display:flex; align-items:center; gap:24px; }
+  .menu-toggle{
+    display:none;
+    background:none; border:none; color:var(--cream);
+    width:34px; height:24px; position:relative;
+  }
+  .menu-toggle span, .menu-toggle span::before, .menu-toggle span::after{
+    content:""; position:absolute; left:0; right:0; height:1px; background:var(--cream);
+    transition:transform .3s var(--ease), opacity .3s var(--ease);
+  }
+  .menu-toggle span{ top:11px; }
+  .menu-toggle span::before{ top:-8px; }
+  .menu-toggle span::after{ top:8px; }
+  .menu-toggle.open span{ background:transparent; }
+  .menu-toggle.open span::before{ transform:translateY(8px) rotate(45deg); }
+  .menu-toggle.open span::after{ transform:translateY(-8px) rotate(-45deg); }
+
+  @media (max-width:900px){
+    nav.primary{
+      position:fixed; inset:0 0 0 auto; width:78%; max-width:340px;
+      background:var(--brown-950);
+      flex-direction:column; align-items:flex-start;
+      padding:110px 34px 40px;
+      gap:28px;
+      transform:translateX(100%);
+      transition:transform .5s var(--ease);
+    }
+    nav.primary.open{ transform:translateX(0); }
+    nav.primary a.nav-link{ font-size:20px; }
+    .nav-cta .btn-gold{ display:none; }
+    nav.primary .mobile-book{ display:inline-flex; margin-top:10px; }
+    .menu-toggle{ display:block; }
+  }
+  .mobile-book{ display:none; }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    min-height:100svh;
+    display:flex; align-items:center;
+    background:
+      radial-gradient(650px circle at var(--mx,50%) var(--my,30%), rgba(198,161,91,0.16), transparent 60%),
+      linear-gradient(180deg, var(--brown-950) 0%, var(--brown-900) 55%, var(--brown-800) 100%);
+    color:var(--cream);
+    overflow:hidden;
+    padding:150px 0 90px;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(246,240,228,0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(246,240,228,0.045) 1px, transparent 1px);
+    background-size:64px 64px;
+    mask-image:radial-gradient(ellipse at 50% 20%, black 10%, transparent 70%);
+    pointer-events:none;
+  }
+  .hero-grain{
+    position:absolute; inset:0; pointer-events:none; opacity:.5; mix-blend-mode:overlay;
+  }
+
+  .orb{
+    position:absolute; border-radius:50%; pointer-events:none;
+    filter:blur(70px); z-index:1;
+    animation:orbfloat 14s ease-in-out infinite;
+  }
+  .orb-1{
+    width:420px; height:420px; top:-120px; right:-100px;
+    background:radial-gradient(circle, rgba(198,161,91,0.5), transparent 70%);
+    animation-delay:0s;
+  }
+  .orb-2{
+    width:320px; height:320px; bottom:-80px; left:-60px;
+    background:radial-gradient(circle, rgba(227,206,156,0.28), transparent 70%);
+    animation-delay:-6s;
+  }
+  .orb-3{
+    width:240px; height:240px; top:38%; left:58%;
+    background:radial-gradient(circle, rgba(198,161,91,0.22), transparent 70%);
+    animation-delay:-3s;
+  }
+  @keyframes orbfloat{
+    0%,100%{ transform:translate(0,0) scale(1); }
+    50%{ transform:translate(-24px,26px) scale(1.08); }
+  }
+
+  .ghost-word{
+    position:absolute; z-index:0; pointer-events:none;
+    font-family:'Fraunces',serif; font-style:italic; font-weight:300;
+    font-size:clamp(120px,20vw,320px);
+    color:transparent;
+    -webkit-text-stroke:1px rgba(246,240,228,0.08);
+    top:6%; right:-2%;
+    line-height:1;
+    user-select:none;
+  }
+
+  .hero-content{ position:relative; z-index:2; max-width:920px; }
+  .hero h1{
+    font-size:clamp(40px, 6.6vw, 92px);
+    color:var(--white);
+  }
+  .hero h1 .line{ display:block; }
+  .hero h1 em{
+    font-style:italic; font-weight:400;
+    background:linear-gradient(100deg, var(--gold-light) 10%, #fff4da 45%, var(--gold) 80%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    filter:drop-shadow(0 0 26px rgba(198,161,91,0.35));
+  }
+
+  .rotating-badge{
+    position:absolute; z-index:2;
+    width:118px; height:118px;
+    right:56px; bottom:64px;
+    display:none;
+    align-items:center; justify-content:center;
+  }
+  .rotating-badge svg{ width:100%; height:100%; animation:spinbadge 16s linear infinite; }
+  .rotating-badge .badge-core{
+    position:absolute; width:40px; height:40px; border-radius:50%;
+    background:linear-gradient(135deg, var(--gold-light), var(--gold));
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 0 24px rgba(198,161,91,0.55);
+  }
+  .rotating-badge .badge-core svg{ animation:none; width:16px; height:16px; }
+  @keyframes spinbadge{ from{ transform:rotate(0deg); } to{ transform:rotate(360deg); } }
+  @media (min-width:1100px){ .rotating-badge{ display:flex; } }
+  .hero .eyebrow{ margin-bottom:28px; }
+  .hero p.sub{
+    font-size:19px;
+    line-height:1.65;
+    max-width:560px;
+    color:rgba(246,240,228,0.72);
+    margin-top:30px;
+  }
+  .hero .tri{
+    margin-top:38px;
+    font-size:13px;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    color:var(--gold-light);
+    display:flex; gap:18px; flex-wrap:wrap; align-items:center;
+  }
+  .hero .tri span.sep{ color:var(--gold-dim); }
+  .hero-actions{ margin-top:48px; display:flex; gap:22px; align-items:center; flex-wrap:wrap; }
+  .scroll-cue{
+    position:absolute; bottom:34px; left:40px; z-index:2;
+    display:flex; align-items:center; gap:12px;
+    color:rgba(246,240,228,0.55);
+    font-size:12px; letter-spacing:0.14em; text-transform:uppercase;
+  }
+  .scroll-cue .stick{
+    width:1px; height:34px; background:rgba(246,240,228,0.3); position:relative; overflow:hidden;
+  }
+  .scroll-cue .stick::after{
+    content:""; position:absolute; top:-100%; left:0; right:0; height:100%;
+    background:var(--gold-light);
+    animation:scrolldrop 2.2s ease-in-out infinite;
+  }
+  @keyframes scrolldrop{ 0%{top:-100%;} 60%{top:100%;} 100%{top:100%;} }
+  @media (max-width:640px){ .scroll-cue{ display:none; } }
+
+  /* ---------- Marquee / proof ticker ---------- */
+  .ticker{
+    background:var(--brown-950);
+    border-top:1px solid var(--line-dark);
+    border-bottom:1px solid var(--line-dark);
+    overflow:hidden;
+    padding:22px 0;
+    position:relative;
+  }
+  .ticker-track{
+    display:flex; width:max-content;
+    animation:ticker 46s linear infinite;
+  }
+  .ticker:hover .ticker-track{ animation-play-state:paused; }
+  .ticker-item{
+    display:flex; align-items:center; gap:16px;
+    color:var(--cream);
+    font-size:15px;
+    padding:0 46px;
+    white-space:nowrap;
+  }
+  .ticker-item .num{
+    font-family:'Fraunces',serif; font-style:italic; color:var(--gold-light);
+    font-size:20px;
+  }
+  .ticker-item .dot{ color:var(--gold-dim); }
+  .ticker-item .src{ color:rgba(246,240,228,0.45); font-size:12px; }
+  @keyframes ticker{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+
+  /* ---------- Sections generic ---------- */
+  section{ padding:150px 0; position:relative; }
+  section.tight{ padding:120px 0; }
+  section.dark{ background:var(--brown-900); color:var(--cream); }
+  section.beige{ background:var(--beige); }
+  @media (max-width:900px){ section{ padding:100px 0; } }
+
+  .section-head{ max-width:680px; margin-bottom:64px; }
+  .section-head h2{ font-size:clamp(30px,4vw,48px); margin-top:20px; }
+  .section-head p{ margin-top:20px; font-size:17px; line-height:1.7; color:var(--ink-soft); }
+  section.dark .section-head p{ color:rgba(246,240,228,0.68); }
+
+  /* ---------- About ---------- */
+  .about-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start;
+  }
+  .about-copy p{ font-size:17px; line-height:1.85; color:var(--ink-soft); margin:0 0 22px; }
+  .pull{
+    border-left:2px solid var(--gold);
+    padding-left:28px;
+    margin:0;
+  }
+  .pull p{
+    font-family:'Fraunces',serif; font-style:italic; font-weight:400;
+    font-size:30px; line-height:1.35; color:var(--ink); margin:0;
+  }
+  .pull cite{ display:block; margin-top:18px; font-style:normal; font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold-dim); }
+  @media (max-width:860px){ .about-grid{ grid-template-columns:1fr; gap:44px; } }
+
+  /* ---------- Stats ---------- */
+  .stat-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:22px;
+  }
+  .stat-card{
+    background:linear-gradient(165deg, rgba(255,255,255,0.05), rgba(255,255,255,0) 60%), var(--brown-900);
+    border:1px solid var(--line-dark);
+    border-radius:22px;
+    padding:40px 26px 34px;
+    text-align:center;
+    transition:transform .5s var(--ease), border-color .5s var(--ease), box-shadow .5s var(--ease);
+  }
+  .stat-card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(198,161,91,0.5);
+    box-shadow:0 26px 60px -30px rgba(198,161,91,0.35);
+  }
+  .ring-wrap{ position:relative; width:148px; height:148px; margin:0 auto 22px; }
+  .ring{ width:100%; height:100%; transform:rotate(-90deg); overflow:visible; }
+  .ring-track{ fill:none; stroke:rgba(246,240,228,0.1); stroke-width:8; }
+  .ring-fill{
+    fill:none; stroke:url(#goldRingGrad); stroke-width:8; stroke-linecap:round;
+    stroke-dasharray:345.6; stroke-dashoffset:345.6;
+    transition:stroke-dashoffset 1.7s cubic-bezier(.22,.61,.36,1);
+    filter:drop-shadow(0 0 10px rgba(198,161,91,0.55));
+  }
+  .ring-label{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces',serif; font-size:27px; color:var(--white); font-weight:500;
+    gap:2px;
+  }
+  .stat-card p.label{ margin-top:2px; font-size:15px; line-height:1.55; color:rgba(246,240,228,0.75); }
+  .stat-card p.source{ margin-top:16px; font-size:11px; letter-spacing:0.04em; color:rgba(246,240,228,0.4); }
+  @media (max-width:900px){ .stat-grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:560px){ .stat-grid{ grid-template-columns:1fr; } .ring-wrap{ width:130px; height:130px; } }
+
+  /* ---------- Services ---------- */
+  .services-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:28px;
+  }
+  @media (max-width:900px){ .services-grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:600px){ .services-grid{ grid-template-columns:1fr; } }
+
+  .service-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:38px 32px;
+    position:relative;
+    overflow:hidden;
+    transition:transform .5s var(--ease), box-shadow .5s var(--ease), border-color .5s var(--ease);
+  }
+  .service-card::before{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(160deg, rgba(198,161,91,0.14), transparent 55%);
+    opacity:0;
+    transition:opacity .5s var(--ease);
+  }
+  .service-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 30px 60px -30px rgba(35,23,16,0.35);
+    border-color:rgba(198,161,91,0.5);
+  }
+  .service-card:hover::before{ opacity:1; }
+  .service-card .idx{
+    font-family:'Fraunces',serif; font-style:italic; color:var(--gold-dim); font-size:14px;
+  }
+  .service-card h3{ font-size:22px; margin-top:20px; position:relative; display:inline-block; }
+  .service-card h3::after{
+    content:""; position:absolute; left:0; bottom:-6px; height:1px; width:0; background:var(--gold);
+    transition:width .4s var(--ease);
+  }
+  .service-card:hover h3::after{ width:100%; }
+  .service-card p{ margin-top:14px; font-size:15px; line-height:1.65; color:var(--ink-soft); position:relative; }
+
+  /* ---------- Process ---------- */
+  .process-list{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; border-top:1px solid var(--line-dark); }
+  .process-item{
+    padding:38px 26px 38px 0;
+    border-bottom:1px solid var(--line-dark);
+    position:relative;
+  }
+  .process-item + .process-item{ border-left:1px solid var(--line-dark); padding-left:26px; }
+  .process-item .idx{
+    font-family:'Fraunces',serif; font-style:italic; font-size:15px; color:var(--gold-light);
+  }
+  .process-item h3{ margin-top:18px; font-size:21px; color:var(--white); }
+  .process-item p{ margin-top:12px; font-size:14.5px; line-height:1.6; color:rgba(246,240,228,0.65); }
+  @media (max-width:900px){
+    .process-list{ grid-template-columns:1fr 1fr; }
+    .process-item:nth-child(2n){ border-left:1px solid var(--line-dark); }
+  }
+  @media (max-width:560px){
+    .process-list{ grid-template-columns:1fr; }
+    .process-item{ border-left:none !important; padding-left:0 !important; }
+  }
+
+  /* ---------- Contact ---------- */
+  .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:80px; }
+  @media (max-width:900px){ .contact-grid{ grid-template-columns:1fr; gap:50px; } }
+  .contact-links{ margin-top:40px; display:flex; flex-direction:column; gap:18px; }
+  .contact-links a{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:16px 0; border-bottom:1px solid var(--line);
+    font-size:15px;
+  }
+  .contact-links a span.arrow{ transition:transform .3s var(--ease); color:var(--gold-dim); }
+  .contact-links a:hover span.arrow{ transform:translateX(6px); }
+
+  .field{ margin-bottom:22px; }
+  .field label{ display:block; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:8px; }
+  .field input, .field select, .field textarea{
+    width:100%; background:transparent; border:none; border-bottom:1px solid var(--line);
+    padding:12px 2px; font-size:16px; font-family:'Inter',sans-serif; color:var(--ink);
+    transition:border-color .3s var(--ease);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{ border-color:var(--gold-dim); outline:none; }
+  .field textarea{ resize:vertical; min-height:96px; }
+  .form-note{ margin-top:20px; font-size:13px; color:var(--ink-soft); min-height:18px; }
+
+  /* ---------- Footer ---------- */
+  footer{ background:var(--brown-950); color:rgba(246,240,228,0.6); padding:70px 0 34px; }
+  .footer-top{ display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:40px; padding-bottom:50px; border-bottom:1px solid var(--line-dark); }
+  .footer-nav{ display:flex; gap:36px; flex-wrap:wrap; }
+  .footer-nav a{ font-size:14px; }
+  .footer-nav a:hover{ color:var(--gold-light); }
+  .footer-social{ display:flex; gap:22px; }
+  .footer-social a:hover{ color:var(--gold-light); }
+  .footer-bottom{ padding-top:26px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px; font-size:12.5px; }
+  .footer-bottom a{ text-decoration:underline; text-underline-offset:3px; }
+
+  .sr-only{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="goldRingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F1E0B0"></stop>
+      <stop offset="100%" stop-color="#B8873E"></stop>
+    </linearGradient>
+  </defs>
+</svg>
+<div class="grain-overlay" aria-hidden="true"></div>
+
+<a href="#main" class="sr-only">Skip to content</a>
+
+<header class="site-nav" id="siteNav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo">KARVO <em>Media</em></a>
+    <nav class="primary" id="primaryNav">
+      <a class="nav-link" href="#top">Home</a>
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#services">Services</a>
+      <a class="nav-link" href="#contact">Contact</a>
+      <a class="btn btn-gold mobile-book magnetic" href="#contact">Book a Call</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-gold magnetic" href="#contact">Book a Call</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primaryNav"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-grain"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="ghost-word">Belief</div>
+    <div class="rotating-badge" aria-hidden="true">
+      <svg viewBox="0 0 120 120">
+        <defs>
+          <path id="badgeCircle" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"></path>
+        </defs>
+        <text font-size="10.4" letter-spacing="2" fill="#E3CE9C" font-family="Inter, sans-serif">
+          <textPath href="#badgeCircle" startOffset="0%">BOOK A STRATEGY CALL • BOOK A STRATEGY CALL •</textPath>
+        </text>
+      </svg>
+      <span class="badge-core">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#160E09" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </span>
+    </div>
+    <div class="wrap hero-content">
+      <p class="eyebrow reveal is-visible">Karvo Media — Influencer Marketing Agency</p>
+      <h1 class="reveal is-visible">
+        <span class="line">Creators don't sell products.</span>
+        <span class="line"><em>They build belief.</em></span>
+      </h1>
+      <p class="sub reveal is-visible reveal-delay-1">We connect ambitious consumer brands with creators whose audiences already trust them — and turn that trust into growth you can measure.</p>
+      <p class="tri reveal is-visible reveal-delay-2">
+        <span>Influence</span><span class="sep">·</span><span>Authenticity</span><span class="sep">·</span><span>Results</span>
+      </p>
+      <div class="hero-actions reveal is-visible reveal-delay-3">
+        <a href="#contact" class="btn btn-gold magnetic">Book Strategy Call</a>
+        <a href="#about" class="btn btn-ghost-dark magnetic">See how it works</a>
+      </div>
+    </div>
+    <div class="scroll-cue"><span class="stick"></span> Scroll</div>
+  </section>
+
+  <!-- PROOF TICKER -->
+  <div class="ticker" aria-label="Industry statistics">
+    <div class="ticker-track" id="tickerTrack">
+      <!-- content injected twice via JS for seamless loop -->
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="reveal">
+          <p class="eyebrow">Our Philosophy</p>
+          <h2 style="font-size:clamp(28px,3.6vw,42px); margin-top:20px;">Advertising didn't get worse. People just stopped believing it.</h2>
+          <div class="about-copy" style="margin-top:28px;">
+            <p>For decades, brands bought attention. A billboard, a banner, a thirty-second spot — reach was the whole strategy, and trust was assumed. That assumption doesn't hold anymore. Audiences have learned to tune out anything that feels like it's selling to them, and they've replaced it with something older and harder to fake: the word of someone they already follow.</p>
+            <p>That's the shift Karvo Media is built around. We're not a legacy agency with a decade of case studies to lean on — we're a team that studied this shift closely and built our entire process to work with it, not against it. Every recommendation, media report, and creator brief we prepare exists to answer one question: does this feel like something a real person would actually say?</p>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <blockquote class="pull">
+            <p>"People don't trust ads. They trust people. Our job is to introduce your brand to the right ones."</p>
+            <cite>— Karvo Media, on how we work</cite>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY IT WORKS -->
+  <section class="dark tight" id="why">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Why Influencer Marketing Works</p>
+        <h2>The numbers behind the shift.</h2>
+        <p>We don't ask you to take authenticity on faith. The research already shows how consumers behave — we just build campaigns around it.</p>
+      </div>
+      <div class="stat-grid reveal">
+        <div class="stat-card">
+          <div class="ring-wrap">
+            <svg class="ring" viewBox="0 0 140 140"><circle class="ring-track" cx="70" cy="70" r="55"></circle><circle class="ring-fill" data-pct="58" cx="70" cy="70" r="55"></circle></svg>
+            <div class="ring-label"><span class="count" data-target="58">0</span>%</div>
+          </div>
+          <p class="label">of consumers have made a purchase because of an influencer's recommendation.</p>
+          <p class="source">BBB National Programs, Influencer Trust Index (2025)</p>
+        </div>
+        <div class="stat-card">
+          <div class="ring-wrap">
+            <svg class="ring" viewBox="0 0 140 140"><circle class="ring-track" cx="70" cy="70" r="55"></circle><circle class="ring-fill" data-pct="57.8" cx="70" cy="70" r="55"></circle></svg>
+            <div class="ring-label">$<span class="count" data-target="5.78" data-decimals="2">0</span></div>
+          </div>
+          <p class="label">in value returned for every $1 spent on influencer marketing, on average.</p>
+          <p class="source">Influencer Marketing Hub, Benchmark Report</p>
+        </div>
+        <div class="stat-card">
+          <div class="ring-wrap">
+            <svg class="ring" viewBox="0 0 140 140"><circle class="ring-track" cx="70" cy="70" r="55"></circle><circle class="ring-fill" data-pct="86" cx="70" cy="70" r="55"></circle></svg>
+            <div class="ring-label"><span class="count" data-target="86">0</span>%</div>
+          </div>
+          <p class="label">of consumers research brands on social media before they buy.</p>
+          <p class="source">IZEA, Trust in Influencer Marketing (2025)</p>
+        </div>
+        <div class="stat-card">
+          <div class="ring-wrap">
+            <svg class="ring" viewBox="0 0 140 140"><circle class="ring-track" cx="70" cy="70" r="55"></circle><circle class="ring-fill" data-pct="77" cx="70" cy="70" r="55"></circle></svg>
+            <div class="ring-label"><span class="count" data-target="77">0</span>%</div>
+          </div>
+          <p class="label">of consumers favor creator content over polished, scripted advertising.</p>
+          <p class="source">IZEA, Trust in Influencer Marketing (2025)</p>
+        </div>
+      </div>
+      <p style="margin-top:26px; font-size:12px; color:rgba(246,240,228,0.4);">The $5.78 ring is plotted on a 0–10 scale for visual comparison.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Services</p>
+        <h2>A full creator program, without the guesswork.</h2>
+        <p>Every engagement is built around your goals and budget — not a one-size-fits-all retainer.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <p class="idx">Strategy</p>
+          <h3>Influencer Strategy</h3>
+          <p>A campaign roadmap built around your actual goals, audience, and category — not a generic playbook.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-1">
+          <p class="idx">Sourcing</p>
+          <h3>Creator Sourcing</h3>
+          <p>Vetted creators chosen for audience fit, values, and voice — not just follower count.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-2">
+          <p class="idx">Partnerships</p>
+          <h3>Brand Partnerships</h3>
+          <p>Terms, contracts, and creative alignment handled so the relationship works for both sides.</p>
+        </div>
+        <div class="service-card reveal">
+          <p class="idx">Execution</p>
+          <h3>Campaign Management</h3>
+          <p>Timelines, briefs, and approvals managed end to end so nothing slips through the cracks.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-1">
+          <p class="idx">Measurement</p>
+          <h3>Performance Reporting</h3>
+          <p>Clear reporting tied to the metrics that actually matter to your business, not vanity numbers.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-2">
+          <p class="idx">Production</p>
+          <h3>Content Coordination</h3>
+          <p>Briefs, usage rights, and repurposing handled so great content works across every channel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="dark tight">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">How We Work</p>
+        <h2>Four steps. No wasted motion.</h2>
+      </div>
+      <div class="process-list reveal">
+        <div class="process-item">
+          <p class="idx">01</p>
+          <h3>Discover</h3>
+          <p>We audit your brand, audience, and goals to define what success actually looks like.</p>
+        </div>
+        <div class="process-item">
+          <p class="idx">02</p>
+          <h3>Match</p>
+          <p>We source and vet creators whose audience and voice genuinely align with your brand.</p>
+        </div>
+        <div class="process-item">
+          <p class="idx">03</p>
+          <h3>Launch</p>
+          <p>We manage the campaign end to end — briefs, timelines, approvals, and content.</p>
+        </div>
+        <div class="process-item">
+          <p class="idx">04</p>
+          <h3>Report</p>
+          <p>We measure what happened, tie it to real outcomes, and refine the next round.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="beige">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="reveal">
+          <p class="eyebrow">Contact</p>
+          <h2 style="font-size:clamp(30px,4vw,48px); margin-top:20px;">Let's build something worth talking about.</h2>
+          <p style="margin-top:20px; font-size:17px; line-height:1.7; color:var(--ink-soft); max-width:460px;">Tell us about your brand and where you're headed. We reply within one business day.</p>
+          <div class="contact-links">
+            <a href="mailto:munzir@karvomedia.com">Email <span>munzir@karvomedia.com</span> <span class="arrow">→</span></a>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <form id="contactForm" novalidate>
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" required autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="brand">Brand / Website</label>
+              <input id="brand" name="brand" type="text" autocomplete="organization">
+            </div>
+            <div class="field">
+              <label for="budget">Monthly budget</label>
+              <select id="budget" name="budget">
+                <option value="under-1k">Under $1,000</option>
+                <option value="1k-3k">$1,000 – $3,000</option>
+                <option value="3k-10k">$3,000 – $10,000</option>
+                <option value="10k-plus">$10,000+</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">What are you looking to grow?</label>
+              <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold magnetic" style="width:100%;">Send Message</button>
+            <p class="form-note" id="formNote" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a href="#top" class="logo">KARVO <em>Media</em></a>
+        <p style="margin-top:14px; max-width:280px; font-size:14px; line-height:1.6;">An influencer marketing agency for brands that grow through trust, not noise.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#top">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="footer-social" aria-label="Contact">
+        <a href="mailto:munzir@karvomedia.com">munzir@karvomedia.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Karvo Media. All rights reserved.</span>
+      <span>Statistics cited from BBB National Programs, Influencer Marketing Hub, and IZEA — sources noted throughout.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---- Nav scroll state ---- */
+  const nav = document.getElementById('siteNav');
+  const onScroll = () => {
+    if (window.scrollY > 40) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  };
+  document.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  /* ---- Mobile menu ---- */
+  const menuToggle = document.getElementById('menuToggle');
+  const primaryNav = document.getElementById('primaryNav');
+  menuToggle.addEventListener('click', () => {
+    const open = primaryNav.classList.toggle('open');
+    menuToggle.classList.toggle('open', open);
+    menuToggle.setAttribute('aria-expanded', open);
+  });
+  primaryNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    primaryNav.classList.remove('open');
+    menuToggle.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', false);
+  }));
+
+  /* ---- Hero mouse-responsive glow ---- */
+  const hero = document.querySelector('.hero');
+  hero.addEventListener('pointermove', (e) => {
+    const r = hero.getBoundingClientRect();
+    const x = ((e.clientX - r.left) / r.width) * 100;
+    const y = ((e.clientY - r.top) / r.height) * 100;
+    hero.style.setProperty('--mx', x + '%');
+    hero.style.setProperty('--my', y + '%');
+  });
+
+  /* ---- Magnetic buttons ---- */
+  document.querySelectorAll('.magnetic').forEach(btn => {
+    let raf;
+    btn.addEventListener('pointermove', (e) => {
+      const r = btn.getBoundingClientRect();
+      const x = e.clientX - r.left - r.width / 2;
+      const y = e.clientY - r.top - r.height / 2;
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        btn.style.transform = `translate(${x * 0.22}px, ${y * 0.32}px)`;
+      });
+    });
+    btn.addEventListener('pointerleave', () => {
+      cancelAnimationFrame(raf);
+      btn.style.transform = 'translate(0,0)';
+    });
+  });
+
+  /* ---- Scroll reveal ---- */
+  const revealEls = document.querySelectorAll('.reveal:not(.is-visible)');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+
+  /* ---- Animated counters ---- */
+  const counters = document.querySelectorAll('.count');
+  const countIo = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseFloat(el.dataset.target);
+      const decimals = parseInt(el.dataset.decimals || '0', 10);
+      const duration = 1400;
+      const start = performance.now();
+      function tick(now){
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const val = target * eased;
+        el.textContent = decimals ? val.toFixed(decimals) : Math.round(val);
+        if (p < 1) requestAnimationFrame(tick);
+        else el.textContent = decimals ? target.toFixed(decimals) : target;
+      }
+      requestAnimationFrame(tick);
+      countIo.unobserve(el);
+    });
+  }, { threshold: 0.6 });
+  counters.forEach(c => countIo.observe(c));
+
+  /* ---- Animated progress rings ---- */
+  const CIRC = 2 * Math.PI * 55; // matches r=55 on the ring circles
+  const rings = document.querySelectorAll('.ring-fill');
+  rings.forEach(r => { r.style.strokeDasharray = CIRC; r.style.strokeDashoffset = CIRC; });
+  const ringIo = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const pct = parseFloat(el.dataset.pct);
+      const offset = CIRC - (CIRC * pct) / 100;
+      requestAnimationFrame(() => { el.style.strokeDashoffset = offset; });
+      ringIo.unobserve(el);
+    });
+  }, { threshold: 0.6 });
+  rings.forEach(r => ringIo.observe(r));
+
+  /* ---- Service card tilt ---- */
+  document.querySelectorAll('.service-card').forEach(card => {
+    card.style.transformStyle = 'preserve-3d';
+    card.style.perspective = '800px';
+    card.addEventListener('pointermove', (e) => {
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      card.style.transform = `translateY(-8px) rotateX(${(-y * 6).toFixed(2)}deg) rotateY(${(x * 8).toFixed(2)}deg)`;
+    });
+    card.addEventListener('pointerleave', () => {
+      card.style.transform = 'translateY(0) rotateX(0) rotateY(0)';
+    });
+  });
+
+  /* ---- Proof ticker content ---- */
+  const tickerItems = [
+    { num: '58%', text: 'have purchased something on an influencer\u2019s recommendation', src: 'BBB National Programs, 2025' },
+    { num: '$5.78', text: 'returned for every $1 spent on influencer campaigns', src: 'Influencer Marketing Hub' },
+    { num: '86%', text: 'research brands on social media before buying', src: 'IZEA, 2025' },
+    { num: '77%', text: 'favor creator content over scripted brand ads', src: 'IZEA, 2025' }
+  ];
+  const track = document.getElementById('tickerTrack');
+  function buildTicker(){
+    let html = '';
+    for (let i=0;i<2;i++){
+      tickerItems.forEach(item => {
+        html += `<div class="ticker-item"><span class="num">${item.num}</span> ${item.text} <span class="dot">•</span> <span class="src">${item.src}</span></div>`;
+      });
+    }
+    track.innerHTML = html;
+  }
+  buildTicker();
+
+  /* ---- Contact form (static, no backend) ---- */
+  const form = document.getElementById('contactForm');
+  const note = document.getElementById('formNote');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      note.textContent = 'Please fill in your name and a valid email.';
+      note.style.color = '#8a3b2a';
+      return;
+    }
+    note.textContent = 'Thanks — we\u2019ll be in touch within one business day.';
+    note.style.color = 'var(--ink)';
+    form.reset();
+  });
+</script>
+
+</body>
+</html>
